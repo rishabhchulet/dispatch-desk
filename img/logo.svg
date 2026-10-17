@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Dispatch Desk mark: a US guide sign. Sign green, white inset rule, "D" from Overpass ExtraBold (SIL OFL). -->
+  <rect width="128" height="128" rx="26" fill="#0F6E47"/>
+  <rect x="8" y="8" width="112" height="112" rx="18.5" fill="none" stroke="#FFFFFF" stroke-width="4.5"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M38.47 95.5V32.5H61.06Q69.3 32.5 75.1 35.16Q80.91 37.81 84.55 42.33Q88.2 46.86 89.86 52.48Q91.53 58.11 91.53 64.0Q91.53 69.36 89.93 74.89Q88.33 80.42 84.75 85.11Q81.18 89.78 75.28 92.64Q69.39 95.5 60.7 95.5ZM51.43 83.17H61.96Q66.42 83.17 69.5 81.46Q72.58 79.75 74.47 76.91Q76.36 74.08 77.24 70.7Q78.12 67.33 78.12 64.0Q78.12 60.49 77.22 57.07Q76.32 53.65 74.49 50.86Q72.67 48.07 69.79 46.41Q66.91 44.74 62.95 44.74H51.43Z"/>
+</svg>

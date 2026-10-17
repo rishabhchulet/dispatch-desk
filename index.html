@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dispatch Desk – carrier packets, broker vetting and rate per mile for truck dispatchers</title>
+<meta name="description" content="A Chrome side panel for truck dispatchers: fill broker carrier packets in one click, vet brokers with FMCSA data, work out rate per mile with deadhead, and file rate cons automatically.">
+<meta property="og:title" content="Dispatch Desk – the dispatcher's side panel for Chrome">
+<meta property="og:description" content="Fill carrier packets in one click. Check brokers before you book. Know your real rate per mile.">
+<meta property="og:image" content="https://rishabhchulet.github.io/dispatch-desk/img/og.png">
+<meta name="theme-color" content="#0F6E47">
+<link rel="icon" href="icon.png">
+<link rel="preload" href="fonts/Overpass-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="./"><img src="img/logo.svg" alt=""><span>Dispatch Desk</span></a>
+    <nav><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a class="btn primary sm keep js-store" href="#pricing">Add to Chrome</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <span class="plaque"><span>For truck dispatchers</span></span>
+      <h1>Carrier packets in one click. Brokers checked before you book.</h1>
+      <p class="lede">Dispatch Desk is a side panel for Chrome. Save each carrier once, then fill any broker's setup form, vet the broker's MC number and work out the real rate per mile without leaving the load you're on.</p>
+      <div class="ctas">
+        <a class="btn primary js-store" href="#pricing">Add to Chrome – free</a>
+        <a class="btn" href="#pricing">See pricing</a>
+      </div>
+      <p class="works"><b>Fills setup forms on</b><span>RMIS · MyCarrierPackets · Highway · brokers' own forms</span></p>
+    </div>
+    <img class="shot" src="img/panel-carriers.png" width="400" height="800" alt="Dispatch Desk side panel showing the active carrier and a Fill form button">
+  </div>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-hd">
+      <span class="eyebrow">What it does</span>
+      <h2>The busywork between finding a load and booking it.</h2>
+      <p>Every new broker wants the same packet. Every rate con needs checking against your target. Every broker deserves a look at their authority and bond. Dispatch Desk does the repetitive part so you can stay on the phone.</p>
+    </div>
+
+    <div class="feature">
+      <div class="copy">
+        <span class="num">01 · Carrier packets</span>
+        <h3>Fill the setup form, then check and submit.</h3>
+        <p>Enter a carrier once: company, MC and DOT, owner and dispatcher contacts, insurance, equipment, factoring. On a broker's carrier setup page, press <b>Fill form</b>.</p>
+        <ul>
+          <li><b>A Fill form button appears</b> on RMIS, MyCarrierPackets and Highway setup pages.</li>
+          <li><b>Any other form:</b> right-click → Fill form with carrier, or Alt+Shift+F.</li>
+          <li><b>Only empty fields are filled</b> and highlighted. Undo puts everything back.</li>
+          <li><b>It never presses submit.</b> You read it over and send it yourself.</li>
+        </ul>
+      </div>
+      <img class="shot" src="img/page-fill.png" width="420" height="560" alt="A carrier setup form with fields filled and highlighted, and the Fill form button">
+    </div>
+
+    <div class="feature flip">
+      <div class="copy">
+        <span class="num">02 · Broker vetting</span>
+        <h3>Know who you're hauling for.</h3>
+        <p>Type or highlight an MC or DOT number and right-click → Vet. Dispatch Desk pulls the broker's record from FMCSA's public data and flags what matters.</p>
+        <ul>
+          <li><b>Authority, bond and insurance on file</b>, allowed-to-operate, out-of-service orders, safety rating.</li>
+          <li><b>Plain verdicts:</b> no red flags, book with care, or do not book without checking.</li>
+          <li><b>Your own notes:</b> star rating, contacts, days-to-pay log and a blocklist that warns you next time.</li>
+        </ul>
+      </div>
+      <img class="shot" src="img/panel-vet.png" width="400" height="800" alt="Broker vetting result with a red do-not-book verdict and the reasons">
+    </div>
+
+    <div class="feature">
+      <div class="copy">
+        <span class="num">03 · Rate per mile</span>
+        <h3>The real number, deadhead included.</h3>
+        <p>Rate, loaded miles and deadhead in; all-in and loaded rate per mile out, with fuel, dispatch and factoring fees taken off so you see what the carrier actually nets.</p>
+        <ul>
+          <li><b>Against your target:</b> see how far above or below you are at a glance.</li>
+          <li><b>Counter in one click:</b> copies "Could you do $2,750? That's $2.50/mi all-in."</li>
+          <li><b>Your defaults stay:</b> diesel price, MPG and fees are remembered.</li>
+        </ul>
+      </div>
+      <img class="shot" src="img/panel-rate.png" width="400" height="800" alt="Rate calculator showing $2.18 per mile all-in, below a $2.50 target">
+    </div>
+
+    <div class="minis">
+      <div class="mini">
+        <span class="num">04 · Messages</span>
+        <h3>Driver sheets and broker emails, pre-filled.</h3>
+        <p>Load details and the carrier's info drop into ready templates: driver dispatch sheet, truck available, rate counter, check call. Copy, email or text the driver. Add your own templates.</p>
+      </div>
+      <div class="mini">
+        <span class="num">05 · Paperwork</span>
+        <h3>Rate cons file themselves.</h3>
+        <p>Download a rate con, BOL, POD, invoice, COI, W-9 or NOA and it's saved to <code>Downloads/Dispatch Desk/&lt;Carrier&gt;/</code> with a clear name. Pro adds a folder per load number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-hd">
+      <span class="eyebrow">How it's built</span>
+      <h2>Your carriers' details stay on your computer.</h2>
+    </div>
+    <div class="rules">
+      <div class="rule"><span class="tag">Local only</span><h3>No account, no cloud.</h3><p>Carrier profiles, notes and settings live in Chrome on your machine. There is no Dispatch Desk server to leak them. Back up to a file whenever you like.</p></div>
+      <div class="rule"><span class="tag">Encrypted</span><h3>Tax ID and bank, locked.</h3><p>EIN, routing and account numbers are encrypted with a passphrase only you know (AES-256). Without it they can't be read, not even by us.</p></div>
+      <div class="rule"><span class="tag">Hands off</span><h3>You stay in control.</h3><p>It never submits a form, never logs in for you and never reads or copies anything from DAT, Truckstop or other load boards.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-hd">
+      <span class="eyebrow">Pricing</span>
+      <h2>Free for one carrier. Pro when you run more.</h2>
+      <p>The free plan is the whole tool for an owner-operator or a dispatcher with one truck. Pro removes the limits.</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <span class="name">Free</span>
+        <div class="price">$0</div>
+        <span class="alt">No card, no account</span>
+        <ul>
+          <li>1 carrier profile with one-click packet filling</li>
+          <li>10 broker lookups a day</li>
+          <li>Rate-per-mile calculator and counter offers</li>
+          <li>Built-in message templates + 2 of your own</li>
+          <li>Automatic paperwork filing per carrier</li>
+        </ul>
+        <div class="buttons"><a class="btn js-store" href="#pricing">Add to Chrome</a></div>
+      </div>
+      <div class="plan pro"><div class="in">
+        <span class="name">Pro</span>
+        <div class="price">$19<small> / month</small></div>
+        <span class="alt">or $149 / year (save $79) · cancel anytime</span>
+        <ul>
+          <li>Unlimited carrier profiles</li>
+          <li>Unlimited broker lookups and full history</li>
+          <li>Unlimited custom message templates</li>
+          <li>Paperwork filed per load (Load # folders)</li>
+          <li>Priority email support</li>
+        </ul>
+        <div class="buttons">
+          <a class="btn white js-buy" data-plan="monthly" href="#pricing">Monthly</a>
+          <a class="btn white js-buy" data-plan="yearly" href="#pricing">Yearly</a>
+        </div>
+      </div></div>
+    </div>
+    <p class="note">Payments are handled by Dodo Payments. You get a licence key by email; paste it into Settings → Licence. 14-day money-back guarantee, see the <a href="refunds.html">refund policy</a>.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-hd"><span class="eyebrow">Questions</span><h2>Before you install</h2></div>
+    <div class="faq">
+      <details><summary>Does it work on any broker's setup form?</summary><p>On RMIS, MyCarrierPackets and Highway setup pages a Fill form button appears in the corner. On any other form, right-click inside it and choose Fill form with carrier, or press Alt+Shift+F. It matches fields by their labels, so most forms work; anything it can't place is left empty for you.</p></details>
+      <details><summary>Will it submit anything for me?</summary><p>No. It only types into empty fields and highlights them. You review the form and press submit yourself. It also skips passwords, captchas and one-time codes.</p></details>
+      <details><summary>Does it work with DAT or Truckstop?</summary><p>It works alongside them, but it doesn't read, copy or scrape anything from load boards. When you find a load, highlight the broker's MC number (or type it in) and vet it from the panel.</p></details>
+      <details><summary>Where does the broker data come from?</summary><p>From FMCSA's public carrier data (the QCMobile service): operating authority, bond and insurance on file, allowed-to-operate status, out-of-service orders and safety rating. FMCSA's records can lag, so for a high-value load also open the SAFER snapshot link shown with every result.</p></details>
+      <details><summary>Where is my data stored?</summary><p>Only in Chrome on your computer. Nothing is uploaded or synced. Tax ID and bank details are encrypted with your passphrase. Use Settings → Back up to move your data to another computer.</p></details>
+      <details><summary>How do I cancel Pro?</summary><p>Use the manage-subscription link in your Dodo Payments receipt email, or email us. You keep Pro until the end of the period you paid for. New purchases can be refunded within 14 days.</p></details>
+      <details><summary>What do I need to run it?</summary><p>Google Chrome 116 or newer on Windows, Mac or ChromeOS.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <div class="wrap">
+    <div class="sign"><div class="in">
+      <div><h2>Next broker packet: one click.</h2><p>Install free. Set up your first carrier in about five minutes.</p></div>
+      <a class="btn white js-store" href="#pricing">Add to Chrome – free</a>
+    </div></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <span>© 2026 Dispatch Desk</span>
+      <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a>
+      <a href="mailto:r.c.7389426@gmail.com">r.c.7389426@gmail.com</a>
+    </div>
+    <p class="disclaimer">Dispatch Desk is an independent tool. It is not affiliated with or endorsed by FMCSA, the U.S. Department of Transportation, DAT, Truckstop, RMIS, MyCarrierPackets or Highway. Their names are used only to describe compatibility.</p>
+  </div>
+</footer>
+
+<script>
+  // Fill these in when they exist. Until then the buttons say so instead of linking nowhere.
+  const STORE_URL = '';                       // Chrome Web Store listing, after approval
+  const CHECKOUT = { monthly: '', yearly: '' }; // Dodo Payments checkout links
+  for (const a of document.querySelectorAll('.js-store')) {
+    if (STORE_URL) a.href = STORE_URL;
+    else { a.textContent = a.classList.contains('sm') ? 'Coming soon' : 'Chrome Web Store: coming soon'; a.setAttribute('aria-disabled', 'true'); }
+  }
+  for (const a of document.querySelectorAll('.js-buy')) {
+    const url = CHECKOUT[a.dataset.plan];
+    if (url) a.href = url;
+    else { a.textContent = a.dataset.plan === 'monthly' ? 'Monthly · soon' : 'Yearly · soon'; a.setAttribute('aria-disabled', 'true'); }
+  }
+</script>
+</body>
+</html>
