@@ -148,8 +148,8 @@
           <li>Priority email support</li>
         </ul>
         <div class="buttons">
-          <a class="btn white js-buy" data-plan="monthly" href="#pricing">Monthly</a>
-          <a class="btn white js-buy" data-plan="yearly" href="#pricing">Yearly</a>
+          <a class="btn white js-buy" data-plan="monthly" href="#pricing">$19 monthly</a>
+          <a class="btn white js-buy" data-plan="yearly" href="#pricing">$149 yearly</a>
         </div>
       </div></div>
     </div>
@@ -195,7 +195,10 @@
 <script>
   // Fill these in when they exist. Until then the buttons say so instead of linking nowhere.
   const STORE_URL = '';                       // Chrome Web Store listing, after approval
-  const CHECKOUT = { monthly: '', yearly: '' }; // Dodo Payments checkout links
+  const CHECKOUT = {                            // Dodo Payments checkout links
+    monthly: 'https://checkout.dodopayments.com/buy/pdt_0Npx2VlVy5XBJz7CnRs7U?quantity=1&redirect_url=https%3A%2F%2Frishabhchulet.github.io%2Fdispatch-desk%2Fthanks.html',
+    yearly: 'https://checkout.dodopayments.com/buy/pdt_0Npx2naRLS2SPMy2QRRrv?quantity=1&redirect_url=https%3A%2F%2Frishabhchulet.github.io%2Fdispatch-desk%2Fthanks.html'
+  };
   for (const a of document.querySelectorAll('.js-store')) {
     if (STORE_URL) a.href = STORE_URL;
     else { a.textContent = a.classList.contains('sm') ? 'Coming soon' : 'Chrome Web Store: coming soon'; a.setAttribute('aria-disabled', 'true'); }
