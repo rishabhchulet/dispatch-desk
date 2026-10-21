@@ -2,14 +2,37 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <title>Refund Policy – Dispatch Desk</title>
-<link rel="icon" href="icon.png"><link rel="stylesheet" href="styles.css">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="nav"><a class="brand" href="./"><img src="img/logo.svg" alt=""><span>Dispatch Desk</span></a>
-    <nav><a href="./#features">Features</a><a href="./#pricing">Pricing</a><a class="keep" href="privacy.html">Privacy</a></nav></header>
-  <main class="legal">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="https://creet.in/"><img src="creet.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="img/logo.svg" alt="" width="24" height="24">Dispatch Desk</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="./#pricing">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refunds.html" aria-current="page">Refunds</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+<article class="legal">
     <h1>Refund Policy</h1>
     <p class="updated">Last updated 17 October 2026</p>
 
@@ -23,13 +46,26 @@
     <p>If a Pro feature stops working because of a change on our side and we haven't fixed it within 14 days of your report, we'll refund the unused part of your current period.</p>
 
     <h2>How to ask</h2>
-    <p>Email <a href="mailto:r.c.7389426@gmail.com">r.c.7389426@gmail.com</a> with the address you used at checkout and your order number. The licence key is deactivated once the refund is processed.</p>
+    <p>Email <a href="mailto:support@creet.in">support@creet.in</a> with the address you used at checkout and your order number. The licence key is deactivated once the refund is processed.</p>
 
     <h2>Duplicate payments</h2>
     <p>Accidental duplicate payments are refunded in full at any time.</p>
-  </main>
-</div>
-<footer><div class="wrap"><div class="row"><span>© 2026 Dispatch Desk</span><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="mailto:r.c.7389426@gmail.com">r.c.7389426@gmail.com</a></div>
-<p class="disclaimer">Dispatch Desk is an independent tool. It is not affiliated with or endorsed by FMCSA, the U.S. Department of Transportation, DAT, Truckstop, RMIS, MyCarrierPackets or Highway.</p></div></footer>
+</article>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© 2026 Dispatch Desk, made by <a href="https://creet.in/">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="./">Overview</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refunds.html">Refunds</a>
+      <a href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+    <p class="fine">Dispatch Desk is an independent tool. It is not affiliated with or endorsed by FMCSA, the U.S. Department of Transportation, DAT, Truckstop, RMIS, MyCarrierPackets or Highway.</p>
+  </div>
+</footer>
+<script src="theme.js"></script>
 </body>
 </html>

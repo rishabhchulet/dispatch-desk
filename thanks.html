@@ -2,27 +2,67 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thank you – Dispatch Desk</title>
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>Thank you – Dispatch Desk Pro</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="icon.png"><link rel="stylesheet" href="styles.css">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="nav"><a class="brand" href="./"><img src="img/logo.svg" alt=""><span>Dispatch Desk</span></a>
-    <nav><a href="./#features">Features</a><a href="./#pricing">Pricing</a><a class="keep" href="privacy.html">Privacy</a></nav></header>
-  <main class="legal">
-    <span class="plaque" style="margin-top:30px"><span>Payment received</span></span>
-    <h1>Thank you. Your Pro licence is on its way.</h1>
-    <p>Dodo Payments is emailing your licence key to the address you used at checkout. It usually arrives within a minute; check your spam folder if it doesn't.</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="https://creet.in/"><img src="creet.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="img/logo.svg" alt="" width="24" height="24">Dispatch Desk</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="./#pricing">Pricing</a>
+      <a href="privacy.html">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="thanks">
+    <p class="stamp">Payment received</p>
+    <h1 class="ruled">Thank you. Your Pro licence is on its way.</h1>
+    <p class="lead">Dodo Payments is emailing your licence key to the address you used at checkout. It usually arrives within a minute; check your spam folder if it doesn't.</p>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="section-head">
+      <h2>Activate in three steps</h2>
+    </div>
     <ol class="steps">
-      <li><i>01</i><span><strong>Open Dispatch Desk.</strong> Click its icon in Chrome's toolbar, or press Alt+Shift+D.</span></li>
-      <li><i>02</i><span><strong>Open Settings.</strong> Click the settings button at the top right of the panel and scroll to Licence.</span></li>
-      <li><i>03</i><span><strong>Paste the key and press Activate.</strong> The tag at the top changes to PRO and the limits are lifted straight away.</span></li>
+      <li><h3>Open Dispatch Desk</h3><p>Click its icon in Chrome's toolbar, or press Alt+Shift+D.</p></li>
+      <li><h3>Open Settings</h3><p>Click the settings button at the top right of the panel and scroll to Licence.</p></li>
+      <li><h3>Paste the key and press Activate</h3><p>The tag at the top changes to PRO and the limits are lifted straight away.</p></li>
     </ol>
-    <p style="margin-top:24px">One licence works in up to three browsers. Lost the email or need help? Write to <a href="mailto:r.c.7389426@gmail.com">r.c.7389426@gmail.com</a> with your order number.</p>
-  </main>
-</div>
-<footer><div class="wrap"><div class="row"><span>© 2026 Dispatch Desk</span><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="mailto:r.c.7389426@gmail.com">r.c.7389426@gmail.com</a></div>
-<p class="disclaimer">Dispatch Desk is an independent tool. It is not affiliated with or endorsed by FMCSA, the U.S. Department of Transportation, DAT, Truckstop, RMIS, MyCarrierPackets or Highway.</p></div></footer>
+    <p class="note">One licence works in up to three browsers. Lost the email or need help? Write to <a href="mailto:support@creet.in">support@creet.in</a> with your order number.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© 2026 Dispatch Desk, made by <a href="https://creet.in/">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="./">Overview</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refunds.html">Refunds</a>
+      <a href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+    <p class="fine">Dispatch Desk is an independent tool. It is not affiliated with or endorsed by FMCSA, the U.S. Department of Transportation, DAT, Truckstop, RMIS, MyCarrierPackets or Highway.</p>
+  </div>
+</footer>
+<script src="theme.js"></script>
 </body>
 </html>
