@@ -34,34 +34,34 @@
 <main id="main" class="wrap">
 <article class="legal">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated 17 October 2026</p>
+    <p class="updated">Last updated 30 October 2026</p>
 
     <h2>Who we are</h2>
-    <p>Dispatch Desk is a Chrome extension for truck dispatchers and owner-operators. It is made by an independent developer based in India (the "Operator", "we"). It is not affiliated with FMCSA, the U.S. Department of Transportation, any load board or any broker onboarding service.</p>
+    <p>Dispatch Desk is a browser extension for truck dispatchers and owner-operators. It is made by an independent developer based in India (the "Operator", "we"). It is not affiliated with FMCSA, the U.S. Department of Transportation, any load board or any broker onboarding service.</p>
 
     <h2>The short version</h2>
     <ul>
-      <li>Everything you enter stays in Chrome on your computer. We have no server that receives it and we cannot see it.</li>
+      <li>Saved profiles stay in your browser on your computer. We have no profile-sync server. When you fill a form, the target website can read the information you place in its fields.</li>
       <li>Tax ID and bank details are encrypted on your device with a passphrase only you know.</li>
-      <li>Only two kinds of request leave your computer: broker lookups to FMCSA, and licence checks to Dodo Payments for Pro users.</li>
-      <li>No analytics, no advertising, no tracking, no selling or sharing of data.</li>
+      <li>The extension calls FMCSA for broker lookups and Dodo Payments for Pro licence checks. Forms you fill and links you open interact with their respective websites.</li>
+      <li>No analytics, advertising, tracking or sale of data.</li>
     </ul>
 
     <h2>What the extension stores on your device</h2>
     <ul>
       <li><strong>Carrier profiles you enter:</strong> company name, MC and USDOT numbers, addresses, owner and dispatcher contact details, equipment, insurance details, factoring and remit-to details.</li>
-      <li><strong>Encrypted fields:</strong> EIN, bank name, routing and account number. They are encrypted with AES-256-GCM using a key derived from your passphrase (PBKDF2-SHA256, 310,000 iterations). The passphrase is never stored; the derived key is kept in memory only while Chrome is open.</li>
+      <li><strong>Encrypted fields:</strong> EIN, bank name, routing and account number. They are encrypted with AES-256-GCM using a key derived from your passphrase (PBKDF2-SHA256, 310,000 iterations). The passphrase is never stored; the derived key is kept in browser session storage until locked or the browser session ends.</li>
       <li><strong>Broker records:</strong> the FMCSA data returned by your lookups (cached for 24 hours), and your own notes, star ratings, days-to-pay log and blocklist.</li>
-      <li><strong>Work data:</strong> load details you type into message templates (kept only until Chrome closes), your custom templates, rate-calculator defaults, and a list of the last 50 paperwork files the extension filed (file name, folder and date; not the file contents).</li>
+      <li><strong>Work data:</strong> load details you type into message templates (kept in browser session storage), your custom templates, rate-calculator defaults, and in Chrome/Edge a list of the last 50 paperwork files the extension filed (file name, folder and date; not the file contents).</li>
       <li><strong>Settings and licence:</strong> your preferences, your optional FMCSA web key, and your Pro licence key and its status.</li>
     </ul>
-    <p>This data is kept in Chrome's extension storage on your device until you delete it. Settings → Delete everything, or uninstalling the extension, removes it. Backups you export are files you control.</p>
+    <p>Persistent data is kept in your browser's extension storage on your device until you delete it. Settings → Delete everything, or uninstalling the extension, removes it. Backups you export are files you control.</p>
 
     <h2>What leaves your device, and when</h2>
     <ul>
       <li><strong>Broker lookups.</strong> When you vet a broker, the MC or USDOT number you entered and the FMCSA web key in use are sent to FMCSA's QCMobile service (mobile.fmcsa.dot.gov), a U.S. government service, which returns public registration data. See <a href="https://www.fmcsa.dot.gov/privacy-policy" rel="noopener">FMCSA's privacy policy</a>.</li>
-      <li><strong>Filling forms.</strong> When you press Fill form, the extension types the active carrier's details into fields on the page you are on. Nothing is sent anywhere by the extension; the website receives the information only if you submit the form yourself, under that website's own privacy policy.</li>
-      <li><strong>Licence checks (Pro only).</strong> Your licence key and a short device label such as "Dispatch Desk on Windows" are sent to Dodo Payments to activate the key and to re-check it about once a day. See <a href="https://dodopayments.com/privacy-policy" rel="noopener">Dodo Payments' privacy policy</a>.</li>
+      <li><strong>Filling forms.</strong> When you press Fill form, the extension types the active carrier's details into fields on the page you are on. That website and its scripts can read those details before you submit, under its own privacy policy. Only fill sites you intend to share this information with. The extension does not submit the form.</li>
+      <li><strong>Licence checks (Pro only).</strong> Activation sends your licence key and a short label to Dodo Payments (for example "Dispatch Desk on Windows" in Chrome/Edge, or "Dispatch Desk" in Firefox). Validation sends the key and activation instance ID. Results are cached for seven days, with up to fourteen days of offline grace; a daily alarm considers whether a check is due. See <a href="https://dodopayments.com/privacy-policy" rel="noopener">Dodo Payments' privacy policy</a>.</li>
       <li><strong>Purchases.</strong> Payments are handled entirely by Dodo Payments as merchant of record. We receive your name, email address, country and order details from Dodo to provide the licence and support. Card details never reach us.</li>
       <li><strong>Links you click.</strong> Buttons such as "SAFER snapshot", "SMS safety" and "Reviews" open public pages (FMCSA, Google) in a new tab with the MC or DOT number in the address.</li>
     </ul>
@@ -73,15 +73,16 @@
       <li>It does not submit forms, log in to sites, or read passwords, captchas or one-time codes.</li>
     </ul>
 
-    <h2>Chrome permissions and why they are needed</h2>
+    <h2>Browser permissions and why they are needed</h2>
     <ul>
       <li><em>storage</em>: keep your carriers, notes and settings on your device.</li>
-      <li><em>sidePanel</em>: show the Dispatch Desk panel beside the page you are working on.</li>
+      <li><em>sidePanel</em> (Chrome/Edge) or Firefox's sidebar interface: show Dispatch Desk beside the page you are working on.</li>
       <li><em>activeTab</em> and <em>scripting</em>: when you choose Fill form (button, right-click or shortcut), insert your carrier's details into the form on that tab only.</li>
       <li><em>contextMenus</em>: the right-click items "Vet with Dispatch Desk" and "Fill form with carrier".</li>
-      <li><em>downloads</em>: when a downloaded PDF looks like freight paperwork, choose its folder and file name. File contents are not read.</li>
-      <li><em>alarms</em>: schedule the daily licence re-check.</li>
+      <li><em>downloads</em>: in Chrome/Edge, choose the folder and filename of freight paperwork PDFs; in all browsers, export a backup on request. Automatic paperwork filing is unavailable in Firefox. File contents are not read.</li>
+      <li><em>alarms</em>: schedule the daily wake-up to consider licence validation.</li>
       <li><em>Site access to mobile.fmcsa.dot.gov</em>: broker lookups. <em>Site access to RMIS, MyCarrierPackets and Highway</em>: show the Fill form button on their carrier setup pages. The extension does not run on other sites unless you trigger a fill there.</li>
+      <li><em>Site access to live.dodopayments.com</em> (Firefox): licence activation and validation.</li>
     </ul>
 
     <h2>Children</h2>
