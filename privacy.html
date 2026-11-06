@@ -44,7 +44,7 @@
     <ul>
       <li>Saved profiles stay in your browser on your computer. We have no profile-sync server. When you fill a form, the target website can read the information you place in its fields.</li>
       <li>Tax ID and bank details are encrypted on your device with a passphrase only you know.</li>
-      <li>The extension calls FMCSA for broker lookups and Dodo Payments for Pro licence checks. Forms you fill and links you open interact with their respective websites.</li>
+      <li>The extension calls FMCSA for broker lookups and Dodo Payments for Pro licence checks. Forms you fill and links you open interact with their respective websites. After installation it opens a welcome page on creet.in, and if you uninstall it your browser opens a short feedback page there.</li>
       <li>The extension has no analytics, advertising, tracking or sale of data. (This website counts visits with Google Analytics; see "This website" below.)</li>
     </ul>
 
@@ -53,6 +53,7 @@
       <li><strong>Carrier profiles you enter:</strong> company name, MC and USDOT numbers, addresses, owner and dispatcher contact details, equipment, insurance details, factoring and remit-to details.</li>
       <li><strong>Encrypted fields:</strong> EIN, bank name, routing and account number. They are encrypted with AES-256-GCM using a key derived from your passphrase (PBKDF2-SHA256, 310,000 iterations). The passphrase is never stored; the derived key is kept in browser session storage until locked or the browser session ends.</li>
       <li><strong>Broker records:</strong> the FMCSA data returned by your lookups (cached for 24 hours), and your own notes, star ratings, days-to-pay log and blocklist.</li>
+      <li><strong>Usage counts:</strong> the date you first used the extension and how many forms you have filled and brokers you have checked, used only to decide when to ask once for a store review. They stay on your device.</li>
       <li><strong>Work data:</strong> load details you type into message templates (kept in browser session storage), your custom templates, rate-calculator defaults, and in Chrome/Edge a list of the last 50 paperwork files the extension filed (file name, folder and date; not the file contents).</li>
       <li><strong>Settings and licence:</strong> your preferences, your optional FMCSA web key, and your Pro licence key and its status.</li>
     </ul>
@@ -64,7 +65,9 @@
       <li><strong>Filling forms.</strong> When you press Fill form, the extension types the active carrier's details into fields on the page you are on. That website and its scripts can read those details before you submit, under its own privacy policy. Only fill sites you intend to share this information with. The extension does not submit the form.</li>
       <li><strong>Licence checks (Pro only).</strong> Activation sends your licence key and a short label to Dodo Payments (for example "Dispatch Desk on Windows" in Chrome/Edge, or "Dispatch Desk" in Firefox). Validation sends the key and activation instance ID. Results are cached for seven days, with up to fourteen days of offline grace; a daily alarm considers whether a check is due. See <a href="https://dodopayments.com/privacy-policy" rel="noopener">Dodo Payments' privacy policy</a>.</li>
       <li><strong>Purchases.</strong> Payments are handled entirely by Dodo Payments as merchant of record. We receive your name, email address, country and order details from Dodo to provide the licence and support. Card details never reach us.</li>
-      <li><strong>Links you click.</strong> Buttons such as "SAFER snapshot", "SMS safety" and "Reviews" open public pages (FMCSA, Google) in a new tab with the MC or DOT number in the address.</li>
+      <li><strong>Links you click.</strong> Buttons such as "SAFER snapshot", "SMS safety" and "Reviews" open public pages (FMCSA, Google) in a new tab with the MC or DOT number in the address. "Upgrade to Pro" opens the pricing section of creet.in, and "Rate" opens the add-on store's review page.</li>
+      <li><strong>Welcome and feedback pages.</strong> When Dispatch Desk is first installed it opens a welcome page on creet.in, and if you uninstall it your browser opens a short "why did you leave?" page there. These links, and the "Upgrade to Pro" link, carry only campaign tags naming the button, your browser and the extension version (for example <code>utm_content=chrome-0.2.0</code>). They contain no carrier data, identifiers or browsing data. The creet.in pages use Google Analytics as described in the <a href="https://creet.in/privacy.html">website privacy notice</a>; the extension itself contains no analytics.</li>
+      <li><strong>Emails you choose to send.</strong> "Report a form that didn't fill" and "Email support" open your own email app with a draft to support@creet.in, including the name of the website you were on and the extension version. Nothing is sent unless you send it.</li>
     </ul>
 
     <h2>What the extension does not do</h2>

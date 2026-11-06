@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('creet-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<title>Sorry to see you go – Dispatch Desk</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Courier+Prime&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="/analytics.js" async></script>
+<style>
+  .reasons{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
+  .reasons .btn[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .after[hidden]{display:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <div class="head-row">
+    <div class="brand">
+      <a class="mark" href="https://creet.in/"><img src="creet.svg" alt="" width="30" height="30">Creet</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a class="product" href="./"><img src="img/logo.svg" alt="" width="24" height="24">Dispatch Desk</a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <button class="theme-toggle" type="button" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="thanks">
+    <p class="stamp">Uninstalled</p>
+    <h1 class="ruled">Sorry to see you go. What didn't work?</h1>
+    <p class="lead">One click helps us fix it for the next dispatcher. Your carrier data was stored only in your browser and was removed with the extension.</p>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <ul class="reasons" aria-label="Why did you uninstall?">
+      <li><button class="btn" type="button" data-reason="form_didnt_fill">A broker's form didn't fill</button></li>
+      <li><button class="btn" type="button" data-reason="hard_to_set_up">Too much to set up</button></li>
+      <li><button class="btn" type="button" data-reason="missing_feature">It's missing something I need</button></li>
+      <li><button class="btn" type="button" data-reason="price">Pro costs too much</button></li>
+      <li><button class="btn" type="button" data-reason="only_needed_once">I only needed it once</button></li>
+      <li><button class="btn" type="button" data-reason="not_a_dispatcher">I'm not a dispatcher</button></li>
+      <li><button class="btn" type="button" data-reason="other">Something else</button></li>
+    </ul>
+
+    <div class="after" hidden>
+      <p class="note" style="margin-top:28px">Thank you, noted. If you have a minute, tell us more and we'll reply. If it was a form, the website's name is enough.</p>
+      <p class="actions" style="margin-top:20px">
+        <a class="btn btn-primary" id="tellMore" href="mailto:support@creet.in?subject=Why%20I%20uninstalled%20Dispatch%20Desk">Tell us more</a>
+        <a class="btn" id="reinstall" href="https://chromewebstore.google.com/detail/jkldfgnenphpndfpmgkmnfhippchkiph">Reinstall</a>
+      </p>
+    </div>
+    <p class="note" style="margin-top:28px">Your answer is recorded with the website's analytics, without your name or email (see <a href="https://creet.in/privacy.html">website privacy</a>). "Tell us more" opens your own email app; nothing is sent unless you press send.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot-row">
+    <p>© 2026 Dispatch Desk, made by <a href="https://creet.in/">Creet</a></p>
+    <nav aria-label="Legal">
+      <a href="./">Overview</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@creet.in">support@creet.in</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  // Count the chosen reason as a Google Analytics event (no personal data), then offer an email.
+  (function () {
+    function track() { (window.dataLayer = window.dataLayer || []).push(arguments); }
+    // The extension's uninstall link says which browser it came from (utm_content=edge-0.2.0 etc.).
+    var from = new URLSearchParams(location.search).get('utm_content') || '';
+    var store = /^edge/.test(from) ? 'https://microsoftedge.microsoft.com/addons/detail/olbnkeahkoonjkcafoamdjiegnlmmigb'
+      : /^firefox/.test(from) ? 'https://addons.mozilla.org/firefox/addon/dispatch-desk/' : '';
+    if (store) document.getElementById('reinstall').href = store;
+    var labels = {};
+    var buttons = document.querySelectorAll('[data-reason]');
+    for (var i = 0; i < buttons.length; i++) labels[buttons[i].dataset.reason] = buttons[i].textContent;
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].addEventListener('click', function (e) {
+        var b = e.currentTarget, reason = b.dataset.reason;
+        for (var k = 0; k < buttons.length; k++) buttons[k].setAttribute('aria-pressed', String(buttons[k] === b));
+        track('event', 'uninstall_reason', { reason: reason });
+        document.getElementById('tellMore').href = 'mailto:support@creet.in?subject=' +
+          encodeURIComponent('Why I uninstalled Dispatch Desk: ' + labels[reason]) +
+          '&body=' + encodeURIComponent((reason === 'form_didnt_fill' ? 'Website of the form: \n' : '') + '\n');
+        document.querySelector('.after').hidden = false;
+      });
+    }
+  })();
+</script>
+<script src="theme.js"></script>
+</body>
+</html>
