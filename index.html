@@ -229,6 +229,31 @@
     if (url) { a.href = url; a.rel = 'noopener'; }
     else { a.textContent = a.dataset.plan === 'monthly' ? 'Monthly: coming soon' : 'Yearly: coming soon'; a.setAttribute('aria-disabled', 'true'); }
   }
+
+  // Campaign tags travel on to the store listings, so the Chrome Web Store dashboard
+  // (Impressions → page views by utm_source / utm_medium / utm_campaign) shows where visitors came from.
+  // Tags from the landing URL (an ad, a post link) win; they are kept for this tab only (sessionStorage).
+  // A visitor who arrived without tags is labelled as coming from this page.
+  (function () {
+    const KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    const STORES = ['chromewebstore.google.com', 'microsoftedge.microsoft.com', 'addons.mozilla.org'];
+    const here = new URLSearchParams(location.search);
+    let tags = {};
+    for (const k of KEYS) { const v = here.get(k); if (v) tags[k] = v.slice(0, 100); }
+    try {
+      if (tags.utm_source) sessionStorage.setItem('dd-utm', JSON.stringify(tags));
+      else tags = JSON.parse(sessionStorage.getItem('dd-utm') || '{}') || {};
+    } catch (e) { /* storage blocked: use the URL tags or the default */ }
+    if (!tags.utm_source) tags = { utm_source: 'creet.in', utm_medium: 'website', utm_campaign: 'dispatch-desk-page' };
+    for (const a of document.querySelectorAll('a[href]')) {
+      let u;
+      try { u = new URL(a.href); } catch (e) { continue; }
+      if (!STORES.includes(u.hostname)) continue;
+      for (const k of KEYS) u.searchParams.delete(k);
+      for (const k of KEYS) if (tags[k]) u.searchParams.set(k, tags[k]);
+      a.href = u.toString();
+    }
+  })();
 </script>
 <script src="theme.js"></script>
 <script src="prices.js"></script>
